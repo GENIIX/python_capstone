@@ -1,0 +1,8 @@
+Raw data: 70,692 rows x 22 columns | target column = 'Diabetes_binary'
+Range validation done: 0 invalid value(s) found.
+Missing value handling done: 0 value(s) imputed.
+Duplicate rows removed: 1,635  (70,692 -> 69,057 rows)
+Data types optimised (float64 -> int8): 11.6 MB -> 1.9 MB
+BMI outliers (IQR rule): Q1=25.0, Q3=33.0, fences=[13.0, 45.0] -> 2,181 flagged (3.16%), kept + BMI_Capped created
+Feature engineering done: Diabetes_Status, Diabetes_Binary, Sex_Label, Age_Group, Education_Level, Income_Group, General_Health, BMI_Category, Risk_Factor_Count, Risk_Level, Healthy_Lifestyle_Score, Poor_Health_Days_Total
+Final clean data: 69,057 rows x 35 columns, missing values = 0

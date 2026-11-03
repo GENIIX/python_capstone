@@ -1,0 +1,53 @@
+==========================================================================================
+ANALYSIS OF FACTORS ASSOCIATED WITH DIABETES STATUS - AUTO-GENERATED SUMMARY
+Generated on 13 October 2026, 07:00
+==========================================================================================
+
+1. DATASET
+   Cleaned dataset: 69,057 respondents, 35 columns (CDC BRFSS 2015 survey).
+   Share of respondents with diabetes in this file: 50.8%  (the file is a BALANCED sample, so this is NOT the real population prevalence)
+
+2. DATA CLEANING SUMMARY
+   Raw data: 70,692 rows x 22 columns | target column = 'Diabetes_binary'
+   Range validation done: 0 invalid value(s) found.
+   Missing value handling done: 0 value(s) imputed.
+   Duplicate rows removed: 1,635  (70,692 -> 69,057 rows)
+   Data types optimised (float64 -> int8): 11.6 MB -> 1.9 MB
+   BMI outliers (IQR rule): Q1=25.0, Q3=33.0, fences=[13.0, 45.0] -> 2,181 flagged (3.16%), kept + BMI_Capped created
+   Feature engineering done: Diabetes_Status, Diabetes_Binary, Sex_Label, Age_Group, Education_Level, Income_Group, General_Health, BMI_Category, Risk_Factor_Count, Risk_Level, Healthy_Lifestyle_Score, Poor_Health_Days_Total
+   Final clean data: 69,057 rows x 35 columns, missing values = 0
+
+3. KEY DESCRIPTIVE FINDINGS
+   - Share with diabetes rises from 8.0% (18-24 yrs) to 64.2% (peak age group: 70-74).
+   - Lowest-income group: 66.0%  vs  highest-income group: 36.5%.
+   - Mean BMI: 32.0 (diabetes)  vs  27.9 (no diabetes).
+   - Risk level: Low 19.2% | Moderate 49.7% | High 76.1%.
+
+4. KEY STATISTICAL FINDINGS (alpha = 0.05)
+   - Normality tests reject normality for BMI and PhysHlth -> non-parametric tests also used.
+   - Chi-square: GenHlth is associated with diabetes (chi2 = 11,356, p <0.001, Cramer's V = 0.4055 -> medium).
+   - Chi-square: HighBP is associated with diabetes (chi2 = 9,557, p <0.001, Cramer's V = 0.372 -> medium).
+   - Chi-square: Age is associated with diabetes (chi2 = 5,950, p <0.001, Cramer's V = 0.2935 -> small).
+   - Odds ratio: High Blood Pressure OR = 4.87 (95% CI 4.72-5.03).
+   - Odds ratio: Difficulty Walking OR = 3.67 (95% CI 3.54-3.81).
+   - Odds ratio: Heart Disease / Attack OR = 3.53 (95% CI 3.37-3.7).
+   - Odds ratio: High Cholesterol OR = 3.19 (95% CI 3.09-3.29).
+   - Protective: Physically Active OR = 0.51 (95% CI 0.5-0.53).
+   - Protective: Eats Vegetables Daily OR = 0.7 (95% CI 0.68-0.73).
+   - Protective: Eats Fruit Daily OR = 0.83 (95% CI 0.81-0.86).
+   - Independent t-test (Welch): mean diff = 3.88 BMI points (31.62 vs 27.74) ; p <0.001 ; Cohen's d = 0.65 (medium).
+   - Logistic regression: AUC = 0.820, pseudo-R2 = 0.252 (simultaneous effect of all factors).
+
+5. CONCLUSION
+   Age, high blood pressure, high cholesterol, BMI, poor general health, difficulty walking and heart disease
+   are strongly associated with diabetes, while physical activity, higher income and higher education are
+   associated with lower rates. Risk grows steadily with the number of risk factors present.
+
+6. LIMITATIONS
+   - Cross-sectional survey: shows ASSOCIATION, not causation.
+   - Heavy alcohol use appears 'protective' (OR < 1) and Cholesterol Check appears as a huge risk (OR > 1): both are
+     artefacts (people diagnosed with diabetes are advised to cut alcohol and are screened more) - reverse causation.
+   - Self-reported answers can be inaccurate; BMI categories are coarse.
+   - With ~69,000 rows nearly every test is 'significant' -> effect sizes (Cramer's V, Cohen's d, OR) matter more.
+   - The dataset is a 50/50 balanced subsample: percentages show differences BETWEEN groups, not real-world prevalence;
+     odds ratios and tests remain valid. Accuracy baseline is 50%, so AUC and odds ratios are the key measures.

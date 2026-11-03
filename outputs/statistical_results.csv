@@ -1,0 +1,47 @@
+Test,Variables,Statistic,P_Value,Decision,Effect_Size,Interpretation
+Shapiro-Wilk (n=5000 sample),BMI,0.9009,4.580803920389117e-49,Reject H0 (significant),,
+D'Agostino-Pearson K2,BMI,26600.5255,0.0,Reject H0 (significant),,
+Anderson-Darling (5% critical),BMI,89.046,,Reject H0 (stat > critical value),,critical value = 0.752
+Kolmogorov-Smirnov vs Normal,BMI,0.1095,1.1892757595296679e-52,Reject H0 (significant),,
+Shapiro-Wilk (n=5000 sample),PhysHlth,0.6209,2.792818434344968e-74,Reject H0 (significant),,
+D'Agostino-Pearson K2,PhysHlth,17306.0592,0.0,Reject H0 (significant),,
+Anderson-Darling (5% critical),PhysHlth,833.4526,,Reject H0 (stat > critical value),,critical value = 0.752
+Kolmogorov-Smirnov vs Normal,PhysHlth,0.3052,0.0,Reject H0 (significant),,
+Levene (median-centred),BMI by Diabetes_Binary,796.6615,2.822785250059688e-174,Reject H0 (significant),,
+Bartlett,BMI by Diabetes_Binary,938.4057,4.396148870795383e-206,Reject H0 (significant),,
+Pearson r,BMI vs PhysHlth,0.1557,0.0,Reject H0 (significant),small,"linear relation, positive"
+Spearman rho,BMI vs PhysHlth,0.1573,0.0,Reject H0 (significant),small,"monotonic relation, positive"
+Kendall tau (n=3000),BMI vs PhysHlth,0.1352,1.2354179968289384e-22,Reject H0 (significant),small,
+Pearson r,BMI vs MentHlth,0.0993,8.584138433919385e-151,Reject H0 (significant),negligible,"linear relation, positive"
+Spearman rho,BMI vs MentHlth,0.0789,8.636028543466738e-96,Reject H0 (significant),negligible,"monotonic relation, positive"
+Kendall tau (n=3000),BMI vs MentHlth,0.0924,6.8797337159881e-11,Reject H0 (significant),negligible,
+Pearson r,PhysHlth vs MentHlth,0.3766,0.0,Reject H0 (significant),medium,"linear relation, positive"
+Spearman rho,PhysHlth vs MentHlth,0.3386,0.0,Reject H0 (significant),medium,"monotonic relation, positive"
+Kendall tau (n=3000),PhysHlth vs MentHlth,0.298,4.534022707157976e-84,Reject H0 (significant),small,
+Pearson r,Age vs Income,-0.1243,1.1050934706160111e-235,Reject H0 (significant),small,"linear relation, negative"
+Spearman rho,Age vs Income,-0.1646,0.0,Reject H0 (significant),small,"monotonic relation, negative"
+Kendall tau (n=3000),Age vs Income,-0.1072,6.6182708269546885e-15,Reject H0 (significant),small,
+Pearson r,GenHlth vs PhysHlth,0.5501,0.0,Reject H0 (significant),large,"linear relation, positive"
+Spearman rho,GenHlth vs PhysHlth,0.52,0.0,Reject H0 (significant),large,"monotonic relation, positive"
+Kendall tau (n=3000),GenHlth vs PhysHlth,0.4441,1.1062672832666941e-192,Reject H0 (significant),medium,
+Pearson r,Income vs Education,0.4504,0.0,Reject H0 (significant),medium,"linear relation, positive"
+Spearman rho,Income vs Education,0.451,0.0,Reject H0 (significant),medium,"monotonic relation, positive"
+Kendall tau (n=3000),Income vs Education,0.3901,2.6788662731302104e-152,Reject H0 (significant),medium,
+Chi-square independence,GenHlth vs Diabetes,11355.57,0.0,Reject H0 (significant),Cramer's V = 0.4055 (medium),
+Chi-square independence,HighBP vs Diabetes,9557.32,0.0,Reject H0 (significant),Cramer's V = 0.372 (medium),
+Chi-square independence,Age vs Diabetes,5950.2,0.0,Reject H0 (significant),Cramer's V = 0.2935 (small),
+Chi-square independence,BMI_Category vs Diabetes,5933.42,0.0,Reject H0 (significant),Cramer's V = 0.2931 (small),
+Chi-square independence,HighChol vs Diabetes,5467.18,0.0,Reject H0 (significant),Cramer's V = 0.2814 (small),
+One-sample t-test,BMI_Capped (diabetes group) vs 25.0,196.6121,0.0,Reject H0 (significant),,mean = 31.62 vs 25.0
+Independent t-test (Welch),BMI_Capped by Diabetes_Binary,85.7527,0.0,Reject H0 (significant),Cohen's d = 0.65 (medium),mean diff = 3.88 BMI points (31.62 vs 27.74)
+Paired t-test,PhysHlth vs MentHlth,53.3102,0.0,Reject H0 (significant),d_z = 0.20 (small),"mean PhysHlth = 5.95 days, mean MentHlth = 3.84 days"
+One-way ANOVA,BMI_Capped by Diabetes_Status,7323.5285,0.0,Reject H0 (significant),eta^2 = 0.096 (medium),"Diabetes: 31.62, No Diabetes: 27.74"
+Tukey HSD post-hoc,Diabetes vs No Diabetes,3.8792,5.797617941283306e-11,Reject H0 (significant),,mean diff = 3.88
+Mann-Whitney U,BMI by Diabetes_Binary,815513028.5,0.0,Reject H0 (significant),rank-biserial r = 0.37 (medium),P(diabetes > no diabetes) = 0.684; medians 31.0 vs 27.0
+Mann-Whitney U,PhysHlth by Diabetes_Binary,725339035.0,0.0,Reject H0 (significant),rank-biserial r = 0.22 (small),P(diabetes > no diabetes) = 0.609; medians 1.0 vs 0.0
+Mann-Whitney U,MentHlth by Diabetes_Binary,623076966.0,1.791576450355082e-35,Reject H0 (significant),rank-biserial r = 0.05 (negligible),P(diabetes > no diabetes) = 0.523; medians 0.0 vs 0.0
+Mann-Whitney U,Income by Diabetes_Binary,447484412.5,0.0,Reject H0 (significant),rank-biserial r = -0.25 (small),P(diabetes > no diabetes) = 0.375; medians 5.0 vs 7.0
+Kruskal-Wallis H,PhysHlth by Diabetes_Status,2950.3981,0.0,Reject H0 (significant),,"medians -> Diabetes: 1.0, No Diabetes: 0.0"
+Kruskal-Wallis H,BMI by Diabetes_Status,7048.4115,0.0,Reject H0 (significant),,"medians -> Diabetes: 31.0, No Diabetes: 27.0"
+Wilcoxon signed-rank (n=5000),PhysHlth vs MentHlth,1055915.0,4.933797644559949e-49,Reject H0 (significant),,
+Kolmogorov-Smirnov 2-sample,BMI by Diabetes_Binary,0.2715,0.0,Reject H0 (significant),,
